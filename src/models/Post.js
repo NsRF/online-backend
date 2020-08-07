@@ -26,7 +26,7 @@ PostSchema.pre('save', function (){
 PostSchema.pre('remove', function (){
     if( process.env.STORAGE_TYPE == 's3') {
         return s3.deleteObject({
-            Bucket: 'nsrupload',
+            Bucket: 'nsruploads',
             Key: this.key,
         }).promise()
     } else {
